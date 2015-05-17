@@ -18,7 +18,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('blog/post_list.html', pk=post.pk)
+            return redirect('/')
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
